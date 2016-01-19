@@ -8,7 +8,7 @@ makeTinyDancer.prototype.step = function() {
   this.$node.toggle();
   var styleSettings = {
     //color: 'blue',
-    border: '2px solid blue'
+    border: '2px solid white'
   };
   this.$node.css(styleSettings);
 };

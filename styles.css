@@ -7,6 +7,7 @@ body{
   margin: 0px;
   background-color:#444;
   font-size: 18px;
+  transition: all 0.3s;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
@@ -24,13 +25,18 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
+  border:10px solid #444;
+  border-radius: 10px;
   position:absolute;
+  transition: border 1.2s;  
 }
 .elton-john {
-  border: 0;
+  border: 0px solid green;
+  border-radius: 0;
   background-image: url('eltonJohn.jpg');
+  background-size: 60px 80px;
+  width: 60px;
+  height: 80px;
 }
 
 a {

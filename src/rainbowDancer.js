@@ -8,7 +8,7 @@ makeRainbowDancer.prototype.step = function() {
   colorString = this.hexHash();
   colorString = '10px solid ' + colorString;
   var styleSettings = {
-    border: colorString
+    border: colorString,
   };
   this.$node.css(styleSettings);
 };
