@@ -23,7 +23,7 @@ var chase = function() {
 var incrementTime = function() {
   var timeInterval = setInterval(function() {
     time += 0.008;
-    revolve(window.dancers[0]);
+    // revolve(window.dancers[0]);
     getCloser(window.dancers[0], window.dancers[window.dancers.length-1]);
     for (var i = 1; i < window.dancers.length; i++) {
       getCloser(window.dancers[i], window.dancers[i-1]);
