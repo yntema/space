@@ -1,5 +1,7 @@
 body, html{
   height:100%;
+  font-family: 'Lato', sans-serif;
+  text-decoration: none;
 }
 body{
   margin: 0px;
@@ -16,6 +18,7 @@ body, a:link, a:visited, a:active{
 .topbar{
   height:32px;
   background-color: #555;
+  text-decoration: none;
 }
 .title{
   background-color: #777;
@@ -28,4 +31,8 @@ body, a:link, a:visited, a:active{
 .elton-john {
   border: 0;
   background-image: url('eltonJohn.jpg');
+}
+
+a {
+  text-decoration: none;
 }

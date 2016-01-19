@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Object Dance Party</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300,100' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script src="lib/jquery.js"></script>
     <script src="src/dancer.js"></script>
@@ -9,13 +10,21 @@
     <script src="src/tinyDancer.js"></script>
     <script src="src/eltonJohnDancer.js"></script>
     <script src="src/rainbowDancer.js"></script>
+    <script src="src/danceFloor.js"></script>
+
 
 
   </head>
   <body>
+
+
     <div class="topbar">
       <span class="title">object dance party</span>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeRainbowDancer">add a blinky dancer</a>    </div>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeRainbowDancer">rainbow dancer</a>    
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeBlinkyDancer">blinky dancer</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeTinyDancer">tiny dancer</a>
+      <a href="#" class="lineupButton" onclick="lineup()">lineup</a>
+    </div>
     <script src="src/init.js"></script>
   </body>
 </html>
