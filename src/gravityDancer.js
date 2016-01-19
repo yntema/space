@@ -1,4 +1,4 @@
-var makeVelocityDancer = function(top, left) {
+var makeGravityDancer = function(top, left) {
   this.updateRate = 10;
   makeDancer.call(this, top, left, this.updateRate);
   this.oldStep = makeDancer.prototype.step;
@@ -9,10 +9,9 @@ var makeVelocityDancer = function(top, left) {
   this.left = +this.$node.css('left').slice(0,-2);
   this.colorString = '10px solid ' + this.velocityToColor();
   this.$node.css({border: this.colorString});
-  this.$node.addClass('velocityDancer');
 };
 
-makeVelocityDancer.prototype.step = function() {
+makeGravityDancer.prototype.step = function() {
   this.oldStep();
   this.top += this.velocity.x * this.updateRate;
   this.left += this.velocity.y * this.updateRate;
@@ -28,7 +27,7 @@ makeVelocityDancer.prototype.step = function() {
   this.$node.css(styleSettings);
 };
 
-makeVelocityDancer.prototype.velocityToColor = function() {
+makeGravityDancer.prototype.velocityToColor = function() {
   var colorString = '#F';
   colorString += Math.floor(this.velocity.x/this.vMax*16+8).toString(16);
   colorString += Math.floor(this.velocity.y/this.vMax*16+8).toString(16);

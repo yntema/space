@@ -48,3 +48,8 @@ body, a:link, a:visited, a:active{
 a {
   text-decoration: none;
 }
+
+.revolve {
+  display: none;
+}
+
