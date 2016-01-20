@@ -14,11 +14,19 @@ var makeVelocityDancer = function(top, left) {
 
 makeVelocityDancer.prototype.step = function() {
   this.oldStep();
-  this.top += this.velocity.x * this.updateRate;
-  this.left += this.velocity.y * this.updateRate;
-  this.top %= $('body').height();
-  this.left %= $('body').width();
-  
+  this.updatePosition();
+  this.boundToScreen();
+  this.updateStyle();
+};
+
+makeVelocityDancer.prototype.velocityToColor = function() {
+  var colorString = '#F';
+  colorString += Math.floor(this.velocity.x/this.vMax*16+8).toString(16);
+  colorString += Math.floor(this.velocity.y/this.vMax*16+8).toString(16);
+  return colorString;
+};
+
+makeVelocityDancer.prototype.updateStyle = function() {
   this.colorString = '10px solid ' + this.velocityToColor();
   var styleSettings = {
     top: this.top,
@@ -28,9 +36,12 @@ makeVelocityDancer.prototype.step = function() {
   this.$node.css(styleSettings);
 };
 
-makeVelocityDancer.prototype.velocityToColor = function() {
-  var colorString = '#F';
-  colorString += Math.floor(this.velocity.x/this.vMax*16+8).toString(16);
-  colorString += Math.floor(this.velocity.y/this.vMax*16+8).toString(16);
-  return colorString;
+makeVelocityDancer.prototype.updatePosition = function() {
+  this.top += this.velocity.y * this.updateRate;
+  this.left += this.velocity.x * this.updateRate;
+};
+
+makeVelocityDancer.prototype.boundToScreen = function() {
+  this.top %= $('body').height();
+  this.left %= $('body').width();
 };

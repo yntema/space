@@ -1,32 +1,27 @@
 var makeGravityDancer = function(top, left) {
   makeVelocityDancer.call(this, top, left);
   this.mass = Math.random()*10;
-  // this.oldStep = makeDancer.prototype.step; //???
+  this.accelleration = {x:0, y:0};
   this.className = 'gravityDancer';
+  this.oldStep = makeDancer.prototype.step;
 };
 
-makeGravityDancer.prototype = Object.create(makeVelocityDancer.prototype);
 makeGravityDancer.prototype.constructor = makeGravityDancer;
+makeGravityDancer.prototype = Object.create(makeVelocityDancer.prototype);
 
 makeGravityDancer.prototype.step = function() {
   this.oldStep();
-  this.top += this.velocity.x * this.updateRate;
-  this.left += this.velocity.y * this.updateRate;
-  this.top %= $('body').height();
-  this.left %= $('body').width();
-  
-  this.colorString = '10px solid ' + this.velocityToColor();
-  var styleSettings = {
-    top: this.top,
-    left: this.left,
-    border: this.colorString,
-  };
-  this.$node.css(styleSettings);
+  // this.updateAccelleration();
+  this.updateVelocity();
+  this.updatePosition();
+  this.boundToScreen();
+  this.updateStyle();
 };
 
-makeGravityDancer.prototype.velocityToColor = function() {
-  var colorString = '#F';
-  colorString += Math.floor(this.velocity.x/this.vMax*16+8).toString(16);
-  colorString += Math.floor(this.velocity.y/this.vMax*16+8).toString(16);
-  return colorString;
+
+makeGravityDancer.prototype.updateVelocity = function() {
+  this.velocity.x += this.accelleration.x * this.updateRate;
+  this.velocity.y += this.accelleration.y * this.updateRate;
 };
+
+
