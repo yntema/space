@@ -1,6 +1,6 @@
 var makeGravityDancer = function(top, left) {
   makeVelocityDancer.call(this, top, left);
-  this.mass = Math.random()*10;
+  this.mass = 1; //Math.random()*10;
   this.accelleration = {x:0, y:0};
   this.className = 'gravityDancer';
   this.oldStep = makeDancer.prototype.step;
@@ -38,7 +38,7 @@ makeGravityDancer.prototype.addForces = function() {
 };
 
 makeGravityDancer.prototype.sumForces = function() {
-  this.newForce = this.forceArray.reduce(function(sum, force){
+  this.netForce = this.forceArray.reduce(function(sum, force){
     sum.x += force.x;
     sum.y += force.y;
     return sum;

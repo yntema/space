@@ -8,32 +8,36 @@ var Force = function(to, from) {
   this.theta = 0;
 };
 
-var gravity = 100;
+var gravity = 10;
 
 var pow = Math.pow;
 var sqrt = Math.sqrt;
-var atan = Math.atan;
+var atan2 = Math.atan2;
 var cos = Math.cos;
 var sin = Math.sin;
 
 Force.prototype.update = function() {
-  console.log('update');
   this.r = sqrt(pow(this.to.top - this.from.top, 2) + pow(this.to.left - this.from.left, 2));
-  this.mag = gravity*this.to.mass*this.from.mass/pow(r, 2);
-  this.theta = atan((this.to.top - this.from.top)/(this.to.left - this.from.left));
+  if (this.r < 50) { 
+    this.r = 50;
+  }
+  this.mag = gravity*this.to.mass*this.from.mass/pow(this.r, 2);
+  this.theta = atan2((this.to.left - this.from.left), (this.to.top - this.from.top));
   this.x = this.mag * cos(this.theta);
   this.y = this.mag * sin(this.theta);
 };
 
 var negativeForce = function(positiveForce) {
-  var oppositeForce = $.extend({}, positiveForce);
-  console.assert(typeof(oppositeForce.update) === 'function');
-  // oppositeForce.prototype.update = Force.prototype.update;
-  var tempForce = oppositeForce.to;
-  oppositeForce.to = oppositeForce.from;
-  oppositeForce.from = tempForce;
-  oppositeForce.x *= -1;
-  oppositeForce.y *= -1;
+  positiveForce.update();
+  var oppositeForce = new Force(positiveForce.from, positiveForce.to);
+
+  // var oppositeForce = $.extend({}, positiveForce);
+  // // oppositeForce.prototype.update = Force.prototype.update;
+  // var tempForce = oppositeForce.to;
+  // oppositeForce.to = oppositeForce.from;
+  // oppositeForce.from = tempForce;
+  // oppositeForce.x *= -1;
+  // oppositeForce.y *= -1;
   return oppositeForce;
 };
 

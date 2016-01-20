@@ -4,7 +4,7 @@ var makeVelocityDancer = function(top, left) {
   this.oldStep = makeDancer.prototype.step;
   this.vMax = 0.1;
   this.velocity = {x:Math.random()*this.vMax-this.vMax/2,
-                   y:Math.random()*this.vMax-this.vMax/2};
+                  y:Math.random()*this.vMax-this.vMax/2};
   this.top = +this.$node.css('top').slice(0,-2);
   this.left = +this.$node.css('left').slice(0,-2);
   this.colorString = '10px solid ' + this.velocityToColor();
@@ -29,16 +29,16 @@ makeVelocityDancer.prototype.velocityToColor = function() {
 makeVelocityDancer.prototype.updateStyle = function() {
   this.colorString = '10px solid ' + this.velocityToColor();
   var styleSettings = {
-    top: this.top,
-    left: this.left,
+    top: this.top-10,
+    left: this.left-10,
     border: this.colorString,
   };
   this.$node.css(styleSettings);
 };
 
 makeVelocityDancer.prototype.updatePosition = function() {
-  this.top += this.velocity.y * this.updateRate;
-  this.left += this.velocity.x * this.updateRate;
+  this.top += this.velocity.x * this.updateRate;
+  this.left += this.velocity.y * this.updateRate;
 };
 
 makeVelocityDancer.prototype.boundToScreen = function() {

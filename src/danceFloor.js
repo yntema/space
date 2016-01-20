@@ -85,8 +85,8 @@ $(document).ready(function(){
   Mousetrap.bind("v", function(e) { $('.velocity').click()});
   Mousetrap.bind("o", function(e) { $('.revolve').click()});
   Mousetrap.bind("g", function(e) { $('.gravity').click()});
-
 });
+
 
 var follow = function() {
   following = true;
