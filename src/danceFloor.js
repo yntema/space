@@ -78,14 +78,23 @@ var getCloser = function($chaser, $chasee) {
 
 $(document).ready(function(){
   Mousetrap.bind("r", function(e) { $('.rainbow').click()});
-  Mousetrap.bind("e", function(e) { $('.elton').click()});
+  Mousetrap.bind("x", function(e) { $('.elton').click()});
   Mousetrap.bind("t", function(e) { $('.tiny').click()});
   Mousetrap.bind("c", function(e) { $('.chase').click()});
   Mousetrap.bind("f", function(e) { $('.follow').click()});
   Mousetrap.bind("v", function(e) { $('.velocity').click()});
   Mousetrap.bind("o", function(e) { $('.revolve').click()});
-  Mousetrap.bind("g", function(e) { $('.gravity').click()});
   Mousetrap.bind("b", function(e) { $('.blackHole').click()});
+  Mousetrap.bind("g", function(e) { $('.gravity').click()});
+  Mousetrap.bind("e", function(e) { $('.Earth').click()});
+  Mousetrap.bind("s", function(e) { $('.Sun').click()});
+  var screenWidth = $('body').width();
+  var screenHeight = $('body').height();
+  var centerScreen = {
+    x: screenWidth/2,
+    y: screenHeight/2
+  };
+
 });
 
 

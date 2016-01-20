@@ -30,14 +30,6 @@ Force.prototype.update = function() {
 var negativeForce = function(positiveForce) {
   positiveForce.update();
   var oppositeForce = new Force(positiveForce.from, positiveForce.to);
-
-  // var oppositeForce = $.extend({}, positiveForce);
-  // // oppositeForce.prototype.update = Force.prototype.update;
-  // var tempForce = oppositeForce.to;
-  // oppositeForce.to = oppositeForce.from;
-  // oppositeForce.from = tempForce;
-  // oppositeForce.x *= -1;
-  // oppositeForce.y *= -1;
   return oppositeForce;
 };
 
