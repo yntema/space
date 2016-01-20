@@ -2,7 +2,7 @@ var makeVelocityDancer = function(top, left) {
   this.updateRate = 10;
   makeDancer.call(this, top, left, this.updateRate);
   this.oldStep = makeDancer.prototype.step;
-  this.vMax = 5;
+  this.vMax = 0.1;
   this.velocity = {x:Math.random()*this.vMax-this.vMax/2,
                    y:Math.random()*this.vMax-this.vMax/2};
   this.top = +this.$node.css('top').slice(0,-2);

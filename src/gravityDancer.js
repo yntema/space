@@ -4,6 +4,9 @@ var makeGravityDancer = function(top, left) {
   this.accelleration = {x:0, y:0};
   this.className = 'gravityDancer';
   this.oldStep = makeDancer.prototype.step;
+  this.forceArray = [];
+  this.netForce = {x:0, y:0};
+  this.addForces();
 };
 
 makeGravityDancer.prototype.constructor = makeGravityDancer;
@@ -11,7 +14,9 @@ makeGravityDancer.prototype = Object.create(makeVelocityDancer.prototype);
 
 makeGravityDancer.prototype.step = function() {
   this.oldStep();
-  // this.updateAccelleration();
+  this.updateForces();
+  this.sumForces();
+  this.updateAccelleration();
   this.updateVelocity();
   this.updatePosition();
   this.boundToScreen();
@@ -24,4 +29,28 @@ makeGravityDancer.prototype.updateVelocity = function() {
   this.velocity.y += this.accelleration.y * this.updateRate;
 };
 
+makeGravityDancer.prototype.addForces = function() {
+  for (var i = 0; i < window.gravityDancers.length; i++) {
+    var newForce = new Force(this, window.gravityDancers[i]);
+    window.gravityDancers[i].forceArray.push(newForce);
+    this.forceArray.push(negativeForce(newForce));
+  }
+};
 
+makeGravityDancer.prototype.sumForces = function() {
+  this.newForce = this.forceArray.reduce(function(sum, force){
+    sum.x += force.x;
+    sum.y += force.y;
+    return sum;
+  }, {x:0, y:0});
+};
+makeGravityDancer.prototype.updateAccelleration = function() {
+  this.accelleration.x = this.netForce.x/this.mass;
+  this.accelleration.y = this.netForce.y/this.mass; 
+};
+
+makeGravityDancer.prototype.updateForces = function() {
+  for (var j = 0; j < this.forceArray.length; j++) {
+    this.forceArray[j].update();
+  }
+};

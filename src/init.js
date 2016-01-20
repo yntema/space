@@ -2,6 +2,7 @@ $(document).ready(function() {
   window.dancers = [];
   window.velocityDancers = [];
   window.gravityDancers = [];
+  window.gravityDancer$Nodes = [];
   $(".addDancerButton").on("click", function(event) {
     if (window.dancers.length < 500) {
       var dancerMakerFunctionName = $(this).data("dancer-maker-function-name");
@@ -13,7 +14,8 @@ $(document).ready(function() {
       );
       $('body').append(dancer.$node);
       if(dancer.className === 'gravityDancer') {
-        window.gravityDancers.push(dancer.$node); 
+        window.gravityDancers.push(dancer); 
+        window.gravityDancer$Nodes.push(dancer.$node);
       } else if (dancer.className === 'velocityDancer') {
         window.velocityDancers.push(dancer.$node); 
       } else {
