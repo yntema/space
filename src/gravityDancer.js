@@ -1,5 +1,6 @@
 var makeGravityDancer = function(top, left) {
   this.updateRate = 10;
+  this.mass = Math.random()*10;
   makeDancer.call(this, top, left, this.updateRate);
   this.oldStep = makeDancer.prototype.step;
   this.vMax = 5;
@@ -9,6 +10,7 @@ var makeGravityDancer = function(top, left) {
   this.left = +this.$node.css('left').slice(0,-2);
   this.colorString = '10px solid ' + this.velocityToColor();
   this.$node.css({border: this.colorString});
+  this.$node.addClass('gravityDancer');
 };
 
 makeGravityDancer.prototype.step = function() {

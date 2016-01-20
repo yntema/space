@@ -1,5 +1,6 @@
 $(document).ready(function() {
   window.dancers = [];
+  window.gravityDancers = [];
   $(".addDancerButton").on("click", function(event) {
     if (window.dancers.length < 20) {
       var dancerMakerFunctionName = $(this).data("dancer-maker-function-name");
@@ -10,7 +11,10 @@ $(document).ready(function() {
         Math.random() * 400 + 800
       );
       $('body').append(dancer.$node);
-      window.dancers.push(dancer.$node);
+      if('mass' in dancer) {
+        window.gravityDancers.push(dancer.$node); 
+      }
+      window.dancers.push(dancer.$node); 
     }
   });
 });

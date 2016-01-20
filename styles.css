@@ -1,35 +1,37 @@
 body, html{
   height:100%;
   font-family: 'Lato', sans-serif;
+  font-weight: 200;
+  font-size: 25px;
+  letter-spacing: 2px;
   text-decoration: none;
 }
 body{
   margin: 0px;
   background-color:#444;
-  font-size: 18px;
   transition: all 0.3s;
 }
 body, a:link, a:visited, a:active{
-  color: lightblue;
+  color: #AAA;
 }
 .title, .addDancerButton{
-  padding:5px 12px;
-  float:right;
+  padding:10px 20px;
+  float:left;
 }
 
-.statusBtn {
-  padding:5px 12px;
-  float:left;
+.topbar .statusBtn {
+  padding:10px 20px;
+  float:right;
+  color: #AAA;
 }
 
 .topbar{
   height:32px;
-  background-color: #555;
+  background-color: #444;
   text-decoration: none;
+  padding: 0 50px;
 }
-.title{
-  background-color: #777;
-}
+
 .dancer{
   border:10px solid #444;
   border-radius: 10px;
@@ -49,7 +51,7 @@ a {
   text-decoration: none;
 }
 
-.revolve {
+.revolve, .elton, .tiny {
   display: none;
 }
 
