@@ -33,9 +33,9 @@ var incrementTime = function() {
       getCloser(window.dancers[0], window.dancers[window.dancers.length-1]); 
     }
     for (var i = 1; i < window.dancers.length; i++) {
-      if (window.dancers[i].attr('class').split(' ').indexOf('velocityDancer') === -1) {
+      // if (window.dancers[i].attr('class').split(' ').indexOf('velocityDancer') === -1) {
         getCloser(window.dancers[i], window.dancers[i-1]);
-      }
+      // }
     }
 
   }, 50);

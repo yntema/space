@@ -9,7 +9,7 @@ var makeVelocityDancer = function(top, left) {
   this.left = +this.$node.css('left').slice(0,-2);
   this.colorString = '10px solid ' + this.velocityToColor();
   this.$node.css({border: this.colorString});
-  this.$node.addClass('velocityDancer');
+  this.className = 'velocityDancer';
 };
 
 makeVelocityDancer.prototype.step = function() {
