@@ -2,7 +2,7 @@ var makeVelocityDancer = function(top, left) {
   this.updateRate = 10;
   makeDancer.call(this, top, left, this.updateRate);
   this.oldStep = makeDancer.prototype.step;
-  this.vMax = 0.1;
+  this.vMax = 10;
   this.velocity = {x:Math.random()*this.vMax-this.vMax/2,
                   y:Math.random()*this.vMax-this.vMax/2};
   this.top = +this.$node.css('top').slice(0,-2);
@@ -27,7 +27,9 @@ makeVelocityDancer.prototype.velocityToColor = function() {
 };
 
 makeVelocityDancer.prototype.updateStyle = function() {
-  this.colorString = '10px solid ' + this.velocityToColor();
+  if(this.className !== 'blackHole') {
+    this.colorString = '10px solid ' + this.velocityToColor();
+  }
   var styleSettings = {
     top: this.top-10,
     left: this.left-10,

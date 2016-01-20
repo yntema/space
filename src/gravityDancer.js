@@ -19,7 +19,7 @@ makeGravityDancer.prototype.step = function() {
   this.updateAccelleration();
   this.updateVelocity();
   this.updatePosition();
-  this.boundToScreen();
+  // this.boundToScreen();
   this.updateStyle();
 };
 

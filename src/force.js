@@ -8,7 +8,7 @@ var Force = function(to, from) {
   this.theta = 0;
 };
 
-var gravity = 10;
+var gravity = 5;
 
 var pow = Math.pow;
 var sqrt = Math.sqrt;
@@ -18,8 +18,8 @@ var sin = Math.sin;
 
 Force.prototype.update = function() {
   this.r = sqrt(pow(this.to.top - this.from.top, 2) + pow(this.to.left - this.from.left, 2));
-  if (this.r < 50) { 
-    this.r = 50;
+  if (this.r < 300) { 
+    this.r = 300;
   }
   this.mag = gravity*this.to.mass*this.from.mass/pow(this.r, 2);
   this.theta = atan2((this.to.left - this.from.left), (this.to.top - this.from.top));

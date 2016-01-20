@@ -13,7 +13,7 @@ $(document).ready(function() {
         Math.random() * 400 + 800
       );
       $('body').append(dancer.$node);
-      if(dancer.className === 'gravityDancer') {
+      if(dancer.className === 'gravityDancer' || dancer.className === 'blackHole') {
         window.gravityDancers.push(dancer); 
         window.gravityDancer$Nodes.push(dancer.$node);
       } else if (dancer.className === 'velocityDancer') {
