@@ -2,7 +2,7 @@ $(document).ready(function() {
   window.dancers = [];
   window.gravityDancers = [];
   $(".addDancerButton").on("click", function(event) {
-    if (window.dancers.length < 20) {
+    if (window.dancers.length < 500) {
       var dancerMakerFunctionName = $(this).data("dancer-maker-function-name");
       var dancerMakerFunction = window[dancerMakerFunctionName];
       var dancer = new dancerMakerFunction(

@@ -90,12 +90,19 @@ $(document).ready(function(){
 
 var follow = function() {
   following = true;
-  $(document).mousemove(function(e){
-    window.dancers[0].css({top:e.pageY, left:e.pageX});
-  });
+  if (window.dancers.length > 0) {
+    $(document).mousemove(function(e){
+      var $frontDancer = window.dancers[0];
+      $frontDancer.css({top:e.pageY-10, 
+                       left:e.pageX-10});
+    });
+    $('.follow').text('unfollow').attr('onclick', "unFollow()");
+  }
 };
 
 var unFollow = function() {
   following = false;
-  $(document).off('mousemove', mouse);
+  $(document).off('mousemove');
+  $('.follow').text('follow').attr('onclick', "follow()");
+
 };
