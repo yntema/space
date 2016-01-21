@@ -28,6 +28,17 @@ var Earth = function() {
 Earth.prototype = Object.create(Planet.prototype);
 Earth.prototype.constructor = Earth;
 
+var Mars = function() {
+  this.screenWidth = $('body').width();
+  this.screenHeight = $('body').height();
+  this.centerScreen = { x: this.screenWidth/2,
+                        y: this.screenHeight/2 };
+  Planet.call(this, this.centerScreen.y + this.screenHeight/4 + 50, this.centerScreen.x, {x:0,y:1}, 1, '#c0392b');
+};
+
+Mars.prototype = Object.create(Planet.prototype);
+Mars.prototype.constructor = Mars;
+
 var Sun = function() {
   this.screenWidth = $('body').width();
   this.screenHeight = $('body').height();

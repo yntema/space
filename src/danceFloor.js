@@ -87,6 +87,7 @@ $(document).ready(function(){
   Mousetrap.bind("b", function(e) { $('.blackHole').click()});
   Mousetrap.bind("g", function(e) { $('.gravity').click()});
   Mousetrap.bind("e", function(e) { $('.Earth').click()});
+  Mousetrap.bind("m", function(e) { $('.Mars').click()});
   Mousetrap.bind("s", function(e) { $('.Sun').click()});
   var screenWidth = $('body').width();
   var screenHeight = $('body').height();
