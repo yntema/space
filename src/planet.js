@@ -33,11 +33,33 @@ var Mars = function() {
   this.screenHeight = $('body').height();
   this.centerScreen = { x: this.screenWidth/2,
                         y: this.screenHeight/2 };
-  Planet.call(this, this.centerScreen.y + this.screenHeight/4 + 50, this.centerScreen.x, {x:0,y:1}, 1, '#c0392b');
+  Planet.call(this, this.centerScreen.y + this.screenHeight/4 + 50, this.centerScreen.x, {x:0,y:1}, 1.3, '#c0392b');
 };
 
 Mars.prototype = Object.create(Planet.prototype);
 Mars.prototype.constructor = Mars;
+
+var Jupiter = function() {
+  this.screenWidth = $('body').width();
+  this.screenHeight = $('body').height();
+  this.centerScreen = { x: this.screenWidth/2,
+                        y: this.screenHeight/2 };
+  Planet.call(this, this.centerScreen.y, this.centerScreen.x + this.screenHeight/4 + 50, {x:-0.6,y:0}, 5, '#c99039');
+};
+
+Jupiter.prototype = Object.create(Planet.prototype);
+Jupiter.prototype.constructor = Jupiter;
+
+var Saturn = function() {
+  this.screenWidth = $('body').width();
+  this.screenHeight = $('body').height();
+  this.centerScreen = { x: this.screenWidth/2,
+                        y: this.screenHeight/2 };
+  Planet.call(this, this.centerScreen.y, this.centerScreen.x - this.screenHeight/4 - 50, {x:0.6,y:0}, 5, '#d8ca9d');
+};
+
+Saturn.prototype = Object.create(Planet.prototype);
+Saturn.prototype.constructor = Saturn;
 
 var Sun = function() {
   this.screenWidth = $('body').width();
@@ -46,8 +68,24 @@ var Sun = function() {
                         y: this.screenHeight/2 };
   Planet.call(this, this.centerScreen.y, this.centerScreen.x, {x:0,y:0}, 100, '#ffa500');
   this.$node.addClass('PlanetStyle');
+  this.$node.addClass('Big');
 };
 
 Sun.prototype = Object.create(Planet.prototype);
 Sun.prototype.constructor = Sun;
+
+var BlackHole = function(top, left) {
+  makeGravityDancer.call(this, top, left);
+  this.velocity = {x:0, y:0};
+  this.mass = 200;
+  this.colorString = '50px solid #111';
+  this.className = 'blackHole';
+  this.$node.addClass('blackHoleStyle')
+  this.$node.addClass('Big');
+
+};
+
+BlackHole.prototype = Object.create(makeGravityDancer.prototype);
+BlackHole.prototype.constructor = BlackHole;
+
 

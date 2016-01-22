@@ -3,6 +3,8 @@ $(document).ready(function() {
   window.velocityDancers = [];
   window.gravityDancers = [];
   window.gravityDancer$Nodes = [];
+  window.screenWidth = $('body').width();
+  window.screenHeight = $('body').height();
   $(".addDancerButton").on("click", function(event) {
     if (window.dancers.length < 500) {
       var dancerMakerFunctionName = $(this).data("dancer-maker-function-name");

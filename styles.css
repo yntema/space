@@ -8,32 +8,52 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-color:#222;
   transition: all 0.3s;
 }
 body, a:link, a:visited, a:active{
-  color: #AAA;
+  color: #666;
 }
-.title, .addDancerButton{
+
+a {
+  transition: all 0.2s;
+}
+a:hover {
+  color: #FFF;
+}
+.addDancerButton{
   padding:10px 20px;
   float:left;
 }
 
-.topbar .statusBtn {
+.bar .statusBtn {
   padding:10px 20px;
-  float:right;
-  color: #AAA;
 }
 
-.topbar{
-  height:32px;
-  background-color: #444;
+.bar{
+  height:50px;
   text-decoration: none;
-  padding: 0 50px;
+  padding: 0 10px;
+}
+
+.bottom {
+  position: fixed;
+  z-index: 100; 
+  bottom: 0; 
+  left: 0;
+  width: 100%;
+}
+
+.bottom .statusBtn {
+  float: right;
+}
+
+.bottom:first-child{
+  margin-right: 10px;
 }
 
 .dancer{
-  border:10px solid #444;
+  border:10px solid #333;
   border-radius: 10px;
   position:absolute;
   transition: border 1.2s;  

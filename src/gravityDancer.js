@@ -5,6 +5,8 @@ var makeGravityDancer = function(top, left) {
   this.className = 'gravityDancer';
   this.oldStep = makeDancer.prototype.step;
   this.forceArray = [];
+  var windForce = new WindForce(this);
+  this.forceArray.push(windForce);
   this.netForce = {x:0, y:0};
   this.addForces();
 };
