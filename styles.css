@@ -79,11 +79,12 @@ a {
   border-radius: 50%;
   box-shadow: 0 0 40px #111;
 }
-
-.PlanetStyle, .SunStyle {
+.PlanetStyle {
   border-radius: 50%;
 }
-.SunStyle {
-  box-shadow: 0 0 100px #FFF;
+
+.PlanetStyle.Sun {
+  border-radius: 50%;
+  box-shadow: 0 0 100px #ffa500;
 }
 

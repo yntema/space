@@ -1,12 +1,10 @@
 var makeGravityDancer = function(top, left) {
   makeVelocityDancer.call(this, top, left);
-  this.mass = 1; //Math.random()*10;
+  this.mass = 3; //Math.random()*10;
   this.accelleration = {x:0, y:0};
   this.className = 'gravityDancer';
   this.oldStep = makeDancer.prototype.step;
   this.forceArray = [];
-  var windForce = new WindForce(this);
-  this.forceArray.push(windForce);
   this.netForce = {x:0, y:0};
   this.addForces();
 };

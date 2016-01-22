@@ -44,7 +44,7 @@ var Jupiter = function() {
   this.screenHeight = $('body').height();
   this.centerScreen = { x: this.screenWidth/2,
                         y: this.screenHeight/2 };
-  Planet.call(this, this.centerScreen.y, this.centerScreen.x + this.screenHeight/4 + 50, {x:-0.6,y:0}, 5, '#c99039');
+  Planet.call(this, this.centerScreen.y, this.centerScreen.x + this.screenHeight/4 + 80, {x:-1.3,y:0}, 6, '#c99039');
 };
 
 Jupiter.prototype = Object.create(Planet.prototype);
@@ -55,7 +55,7 @@ var Saturn = function() {
   this.screenHeight = $('body').height();
   this.centerScreen = { x: this.screenWidth/2,
                         y: this.screenHeight/2 };
-  Planet.call(this, this.centerScreen.y, this.centerScreen.x - this.screenHeight/4 - 50, {x:0.6,y:0}, 5, '#d8ca9d');
+  Planet.call(this, this.centerScreen.y, this.centerScreen.x - this.screenHeight/4 - 100, {x:1.5,y:0}, 5, '#d8ca9d');
 };
 
 Saturn.prototype = Object.create(Planet.prototype);
@@ -64,11 +64,13 @@ Saturn.prototype.constructor = Saturn;
 var Sun = function() {
   this.screenWidth = $('body').width();
   this.screenHeight = $('body').height();
-  this.centerScreen = { x: this.screenWidth/2,
-                        y: this.screenHeight/2 };
+  this.centerScreen = { x: this.screenWidth/2 - 50,
+                        y: this.screenHeight/2 - 50};
   Planet.call(this, this.centerScreen.y, this.centerScreen.x, {x:0,y:0}, 100, '#ffa500');
-  this.$node.addClass('PlanetStyle');
+  this.$node.addClass('Sun');
   this.$node.addClass('Big');
+  var windForce = new WindForce(this);
+  this.forceArray.push(windForce);
 };
 
 Sun.prototype = Object.create(Planet.prototype);
