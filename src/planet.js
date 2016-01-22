@@ -22,7 +22,7 @@ var Earth = function() {
   this.screenHeight = $('body').height();
   this.centerScreen = { x: this.screenWidth/2,
                         y: this.screenHeight/2 };
-  Planet.call(this, this.centerScreen.y - this.screenHeight/4, this.centerScreen.x, {x:0,y:-0.8}, 3, '#00f');
+  Planet.call(this, this.centerScreen.y - this.screenHeight/4, this.centerScreen.x, {x:0,y:-0.9}, 3, '#00f');
 };
 
 Earth.prototype = Object.create(Planet.prototype);
@@ -60,6 +60,17 @@ var Saturn = function() {
 
 Saturn.prototype = Object.create(Planet.prototype);
 Saturn.prototype.constructor = Saturn;
+
+var Pluto = function() {
+  this.screenWidth = $('body').width();
+  this.screenHeight = $('body').height();
+  this.centerScreen = { x: this.screenWidth/2,
+                        y: this.screenHeight/2 };
+  Planet.call(this, this.centerScreen.y, this.centerScreen.x - this.screenWidth/4 - 200, {x:1.1,y:0}, 0.002, '#ecf0f1');
+};
+
+Pluto.prototype = Object.create(Planet.prototype);
+Pluto.prototype.constructor = Pluto;
 
 var Sun = function() {
   this.screenWidth = $('body').width();

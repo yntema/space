@@ -91,6 +91,7 @@ $(document).ready(function(){
   Mousetrap.bind("s", function(e) { $('.Sun').click()});
   Mousetrap.bind("j", function(e) { $('.Jupiter').click()});
   Mousetrap.bind("a", function(e) { $('.Saturn').click()});
+  Mousetrap.bind("p", function(e) { $('.Pluto').click()});
   var screenWidth = $('body').width();
   var screenHeight = $('body').height();
   var centerScreen = {
