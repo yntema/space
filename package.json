@@ -1,0 +1,25 @@
+{
+  "name": "solar-system",
+  "version": "1.0.0",
+  "description": "This is a project I completed as a student at [hackreactor](http://hackreactor.com). This project was worked on with a pair.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yntema/subclass-dance-party.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yntema/subclass-dance-party/issues"
+  },
+  "homepage": "https://github.com/yntema/subclass-dance-party#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "morgan": "^1.7.0"
+  }
+}
