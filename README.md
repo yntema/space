@@ -1,2 +1,7 @@
-#subclass-dance-party
-This is a project I completed as a student at [hackreactor](http://hackreactor.com). This project was worked on with a pair.
+#space
+
+Space meets javascript to mimic planetary forces.
+
+Click on the menu items to put the objects into action.
+
+view it live at gerrityntema.com
